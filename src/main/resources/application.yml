@@ -1,0 +1,20 @@
+server:
+  port: 71
+
+spring:
+    kafka:
+        bootstrap-servers: localhost:9092
+        consumer:
+            group-id: grupo-api2
+            auto-offset-reset: earliest
+            key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+            value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+        producer:
+            key-serializer: org.apache.kafka.common.serialization.StringSerializer
+            value-serializer: org.apache.kafka.common.serialization.StringSerializer
+        topic: test
+    data:
+        mongodb:
+            uri: mongodb+srv://mafernandeza:GZJ8GFDVylCuCsG0@cluster0.pexgv.mongodb.net/db_todo?retryWrites=true&w=majority&appName=Cluster0
+            database: db_todo
+#mongodb+srv://mafernandeza:<db_password>@cluster0.pexgv.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
